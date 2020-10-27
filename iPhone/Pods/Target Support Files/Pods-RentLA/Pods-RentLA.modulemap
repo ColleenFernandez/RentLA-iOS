@@ -1,6 +1,0 @@
-framework module Pods_RentLA {
-  umbrella header "Pods-RentLA-umbrella.h"
-
-  export *
-  module * { export * }
-}

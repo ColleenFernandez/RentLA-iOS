@@ -1,0 +1,28 @@
+target 'rentLA' do
+use_frameworks!
+pod 'EnhancedCircleImageView'
+pod 'MarqueeLabel'
+pod 'iOSDropDown'
+pod 'IQKeyboardManagerSwift'
+pod 'ProgressHUD', '~> 2.60'
+pod 'Alamofire'
+pod 'SDWebImage'
+pod 'TestFairy'
+pod 'DatePickerDialog'
+pod 'HSAttachmentPicker'
+pod 'Lightbox'
+pod "BSImagePicker", "~> 3.1"
+pod 'SwiftyGif'
+pod 'QRScanner'
+pod "MTBBarcodeScanner"
+pod "BSImagePicker", "~> 3.1"
+pod 'FSCalendar'
+pod 'ImageSlideshow', '~> 1.5'
+pod "FlagPhoneNumber"
+pod 'SRSwiftyPopView'
+pod "ImageSlideshow/Alamofire"
+pod "ImageSlideshow/SDWebImage"
+pod "ImageSlideshow/Kingfisher"
+pod 'SVPullToRefresh'
+
+end

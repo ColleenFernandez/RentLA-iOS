@@ -1,0 +1,127 @@
+PODS:
+  - Alamofire (5.2.2)
+  - AlamofireImage (4.1.0):
+    - Alamofire (~> 5.1)
+  - BSImagePicker (3.2.1)
+  - Cache (5.3.0)
+  - DatePickerDialog (3.0)
+  - EnhancedCircleImageView (0.1)
+  - FlagPhoneNumber (0.8.0):
+    - FlagPhoneNumber/libPhoneNumberiOS (= 0.8.0)
+  - FlagPhoneNumber/libPhoneNumberiOS (0.8.0)
+  - FSCalendar (2.8.1)
+  - HSAttachmentPicker (1.1.3)
+  - ImageSlideshow (1.9.1):
+    - ImageSlideshow/Core (= 1.9.1)
+  - ImageSlideshow/Alamofire (1.9.1):
+    - AlamofireImage (~> 4.0)
+    - ImageSlideshow/Core
+  - ImageSlideshow/Core (1.9.1)
+  - ImageSlideshow/Kingfisher (1.9.1):
+    - ImageSlideshow/Core
+    - Kingfisher (> 3.0)
+  - ImageSlideshow/SDWebImage (1.9.1):
+    - ImageSlideshow/Core
+    - SDWebImage (>= 3.7)
+  - Imaginary (4.3.1):
+    - Cache (~> 5.3.0)
+  - iOSDropDown (0.3.4)
+  - IQKeyboardManagerSwift (6.5.5)
+  - Kingfisher (5.14.1):
+    - Kingfisher/Core (= 5.14.1)
+  - Kingfisher/Core (5.14.1)
+  - Lightbox (2.4.2):
+    - Imaginary (~> 4.3.1)
+  - MarqueeLabel (4.0.2)
+  - MTBBarcodeScanner (5.0.11)
+  - ProgressHUD (2.70)
+  - QRScanner (0.0.9)
+  - SDWebImage (5.8.4):
+    - SDWebImage/Core (= 5.8.4)
+  - SDWebImage/Core (5.8.4)
+  - SRSwiftyPopView (0.2.0)
+  - SVPullToRefresh (0.4.1)
+  - SwiftyGif (5.3.0)
+  - TestFairy (1.25.2)
+
+DEPENDENCIES:
+  - Alamofire
+  - BSImagePicker (~> 3.1)
+  - DatePickerDialog
+  - EnhancedCircleImageView
+  - FlagPhoneNumber
+  - FSCalendar
+  - HSAttachmentPicker
+  - ImageSlideshow (~> 1.5)
+  - ImageSlideshow/Alamofire
+  - ImageSlideshow/Kingfisher
+  - ImageSlideshow/SDWebImage
+  - iOSDropDown
+  - IQKeyboardManagerSwift
+  - Lightbox
+  - MarqueeLabel
+  - MTBBarcodeScanner
+  - ProgressHUD (~> 2.60)
+  - QRScanner
+  - SDWebImage
+  - SRSwiftyPopView
+  - SVPullToRefresh
+  - SwiftyGif
+  - TestFairy
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - AlamofireImage
+    - BSImagePicker
+    - Cache
+    - DatePickerDialog
+    - EnhancedCircleImageView
+    - FlagPhoneNumber
+    - FSCalendar
+    - HSAttachmentPicker
+    - ImageSlideshow
+    - Imaginary
+    - iOSDropDown
+    - IQKeyboardManagerSwift
+    - Kingfisher
+    - Lightbox
+    - MarqueeLabel
+    - MTBBarcodeScanner
+    - ProgressHUD
+    - QRScanner
+    - SDWebImage
+    - SRSwiftyPopView
+    - SVPullToRefresh
+    - SwiftyGif
+    - TestFairy
+
+SPEC CHECKSUMS:
+  Alamofire: 814429acc853c6c54ff123fc3d2ef66803823ce0
+  AlamofireImage: c4a2ba349885fb3064feb74d2e547bd42ce9be10
+  BSImagePicker: 5e87fe42526efdc3fe8ea23d6e4fac9eef43ecfb
+  Cache: 48762993ec44e1d93483c4d4a13edd18452326f4
+  DatePickerDialog: 03dbb8350bfa80302ab2a8c83cee1fec70184444
+  EnhancedCircleImageView: 1069bbc14526d89502cc0e48b45f5da6a3317a47
+  FlagPhoneNumber: 3712455b95f66cb0f2016fef7d9e34cddf8c7f9a
+  FSCalendar: 5245140456fcbcac5824c203b98bd8068bdfee1a
+  HSAttachmentPicker: 51eb856dcb942a2e3419f97207cca8373428395c
+  ImageSlideshow: 67184be896a28472bd3b906c33ce4e0734aa3d22
+  Imaginary: 18c5bba364229eef383b925199db442e71d175e1
+  iOSDropDown: c10a761f9a00c3f1cc9d3bce43ae504628e2f692
+  IQKeyboardManagerSwift: 0fb93310284665245591f50f7a5e38de615960b7
+  Kingfisher: 8050bc6f7f68cbf3908bd04df7ccbac188f6d6d6
+  Lightbox: 8837c35c1150fa0410d94296e369b432d37f18c7
+  MarqueeLabel: f762aa681ae201f66c1d511858b171f75d83013a
+  MTBBarcodeScanner: f453b33c4b7dfe545d8c6484ed744d55671788cb
+  ProgressHUD: e603e8b8622c47d8818b9fb38b3cfe9d3e7ca421
+  QRScanner: b2c5d50e723ce58d009467d3ea0694f63c4ebe7a
+  SDWebImage: cf6922231e95550934da2ada0f20f2becf2ceba9
+  SRSwiftyPopView: bcdfc52480031b4165c3bff1a659f33afe9abb5e
+  SVPullToRefresh: ba2e718695a43253d8bea6852d2960097dc15d8c
+  SwiftyGif: e466e86c660d343357ab944a819a101c4127cb40
+  TestFairy: eabbef0b06e28a40e89a7cd115112ee2efa61daf
+
+PODFILE CHECKSUM: d17acfd627ca4929214f07ad07352a328402622d
+
+COCOAPODS: 1.8.1
