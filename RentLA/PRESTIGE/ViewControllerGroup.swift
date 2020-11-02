@@ -29,17 +29,11 @@ class ViewControllerGroup: UIViewController,UITableViewDelegate,UITableViewDataS
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        
-        
-              let nib = UINib(nibName: "SessionsTableViewCellFav", bundle: nil)
-              tblView.register(nib, forCellReuseIdentifier: "SessionsTableViewCellFav")
-              
-        
+        let nib = UINib(nibName: "SessionsTableViewCellFav", bundle: nil)
+        tblView.register(nib, forCellReuseIdentifier: "SessionsTableViewCellFav")
         let token = UserDefaults.standard.string(forKey: "TOP_TITLE")
         self.lblThanks.text = "\(token!)"
-        
-          tabBar.selectedItem = tabBar.items![0] as! UITabBarItem
-        
+        tabBar.selectedItem = tabBar.items![0] as! UITabBarItem
         self.emp_array.removeAllObjects()
         self.signinProcessNew(getCount: 0)
         tblView.addInfiniteScrolling(actionHandler: { [self] in
@@ -49,20 +43,11 @@ class ViewControllerGroup: UIViewController,UITableViewDelegate,UITableViewDataS
             self.tagCount = self.tagCount+1 ;
 
             self.signinProcessNew(getCount: self.tagCount)
-
         })
-        
-        
-        
     }
     
     var tagCount = 0;
-    
-    
     @IBAction func clickNew(_ sender: Any) {
-        
-      
-        
         /*
         let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
 
@@ -91,120 +76,65 @@ class ViewControllerGroup: UIViewController,UITableViewDelegate,UITableViewDataS
                   */
         
     }
-    
-    
     @IBAction func changeSeg(_ sender: Any) {
         
         self.tblView.reloadData()
     }
    func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
-           
-           print("Come")
-           
-           if item == (tabBar.items)![0] {
-               
-            if let viewController = UIStoryboard(name: "\(UserDefaults.standard.string(forKey: "STORY_BOARD")!)", bundle: nil).instantiateViewController(withIdentifier: "ViewControllerMyNetworks") as? ViewControllerMyNetworks
-                                 {
-                                     if let navigator = navigationController
-                                     {
-                                         navigator.pushViewController(viewController, animated: false)
-                                     }
-                                 }
-                            
-               
-           }
-           else if item == (tabBar.items)![1] {
-               
-               
-              if let viewController = UIStoryboard(name: "\(UserDefaults.standard.string(forKey: "STORY_BOARD")!)", bundle: nil).instantiateViewController(withIdentifier: "ViewControllerMyuPost") as? ViewControllerMyuPost
-                    {
-                        if let navigator = navigationController
-                        {
-                            navigator.pushViewController(viewController, animated: false)
-                        }
-                    }
-               
-               
-           }
-        else if item == (tabBar.items)![2] {
-            
-            
-           if let viewController = UIStoryboard(name: "\(UserDefaults.standard.string(forKey: "STORY_BOARD")!)", bundle: nil).instantiateViewController(withIdentifier: "ViewControllerFekkowship") as? ViewControllerFekkowship
-                 {
-                     if let navigator = navigationController
-                     {
-                         navigator.pushViewController(viewController, animated: false)
-                     }
-                 }
-            
+    print("Come")
+    if item == (tabBar.items)![0] {
+        if let viewController = UIStoryboard(name: "\(UserDefaults.standard.string(forKey: "STORY_BOARD")!)",bundle: nil).instantiateViewController(withIdentifier: "ViewControllerMyNetworks") as? ViewControllerMyNetworks
+        {
+            if let navigator = navigationController
+            {
+                navigator.pushViewController(viewController, animated: false)
+            }
+        }
+    }
+    else if item == (tabBar.items)![1] {
+        if let viewController = UIStoryboard(name: "\(UserDefaults.standard.string(forKey: "STORY_BOARD")!)", bundle: nil).instantiateViewController(withIdentifier: "ViewControllerMyuPost") as? ViewControllerMyuPost
+        {
+            if let navigator = navigationController
+            {
+                navigator.pushViewController(viewController, animated: false)
+            }
+        }
+    }
+    else if item == (tabBar.items)![2] {
+        if let viewController = UIStoryboard(name: "\(UserDefaults.standard.string(forKey: "STORY_BOARD")!)", bundle: nil).instantiateViewController(withIdentifier: "ViewControllerFekkowship") as? ViewControllerFekkowship
+        {
+            if let navigator = navigationController
+            {
+                navigator.pushViewController(viewController, animated: false)
+            }
+        }
+    }
+    else if item == (tabBar.items)![3] {
+        if let viewController = UIStoryboard(name: "\(UserDefaults.standard.string(forKey: "STORY_BOARD")!)", bundle: nil).instantiateViewController(withIdentifier: "ViewControllerNotify") as? ViewControllerNotify
+        {
+            if let navigator = navigationController
+            {
+                navigator.pushViewController(viewController, animated: false)
+            }
+        }
+    }
+   }
+    func signinProcessNew(getCount:Int)
+    {
+        if getCount == 0
+        {
+            ProgressHUD.show()
             
         }
-        else if item == (tabBar.items)![3] {
-                   
-                   
-                  if let viewController = UIStoryboard(name: "\(UserDefaults.standard.string(forKey: "STORY_BOARD")!)", bundle: nil).instantiateViewController(withIdentifier: "ViewControllerNotify") as? ViewControllerNotify
-                        {
-                            if let navigator = navigationController
-                            {
-                                navigator.pushViewController(viewController, animated: false)
-                            }
-                        }
-                   
-                   
-               }
-         
-       }
-       
-    
-    
-       
-    
-    
-            
-    func signinProcessNew(getCount:Int)
-              {
-                  
-                if getCount == 0
-                {
-                 ProgressHUD.show()
-                }
-                                          let token = UserDefaults.standard.string(forKey: "BROWSE_URL")
-                                                             
-                                        let deviceid = UserDefaults.standard.string(forKey: "DEVICE_ID")
-                                                                                                            
-                                                             var urlString = ""
-                                                             let parameters: [String: String] = [
-                                                               "api_key": "\(ConstantsURL.apikey)",
-                                                               
-                                                               
-                                                                 
-                                                                 
-                                                                 ]
-                                                             
-                                                             
-                 urlString = "\(ConstantsURL.baseURL)&type=read&\(token!)&iPage=\(getCount)"
-                                                                  
-                                                             
-                                                             
-                                                             print(urlString)
-                 
-                                                            print(parameters)
-                                                             
-                                                             
-                                                             
-                                                             
-                                                             
-                                                            
-                  
-                                                            
-                                                          
-                                              
-                                                               AF.request(urlString, method: .get, parameters: nil, encoding: URLEncoding.default).responseJSON
-                                                                 {response in
-                                                                 
-
-                                                                     switch response.result {
-                                                                     case .success:
+        let token = UserDefaults.standard.string(forKey: "BROWSE_URL")
+        let deviceid = UserDefaults.standard.string(forKey: "DEVICE_ID")
+        var urlString = ""
+        let parameters: [String: String] = [                                                               "api_key": "\(ConstantsURL.apikey)",
+        ]
+        urlString = "\(ConstantsURL.baseURL)&type=read&\(token!)&iPage=\(getCount)"
+        AF.request(urlString, method: .get, parameters: nil, encoding: URLEncoding.default).responseJSON
+        { [self]response in
+            switch response.result {                                                                     case .success:
                                                                          print("Res\(response.value!)")
                                                                          
                                                                          let JSON = response.value as! NSDictionary?
@@ -215,16 +145,16 @@ class ViewControllerGroup: UIViewController,UITableViewDelegate,UITableViewDataS
                                                                           
            if status == "OK"
           {
-             
-            
-             
              let signstatus = (JSON as AnyObject).value(forKeyPath: "response") as! Array<Any>
-
-             
-             
              self.emp_array.addObjects(from: signstatus)
-             
             
+            for item in self.emp_array {
+                let JSON = item as! NSDictionary
+                let fk_i_item_id = "\(JSON.value(forKeyPath: "fk_i_item_id") ?? "")"
+                if fk_i_item_id.count == 0 {
+                    emp_array.remove(item)
+                }
+            }
             self.tblView.infiniteScrollingView.stopAnimating()
 
              self.tblView.reloadData()
@@ -236,14 +166,8 @@ class ViewControllerGroup: UIViewController,UITableViewDelegate,UITableViewDataS
          else
           {
               ProgressHUD.showError(JSON?.value(forKeyPath: "message") as! String)
-            
-            
-          
          }
-                                                                         
-                                                                        
-                                                                         
-                                 
+                
                                  break
                              case .failure(let error):
                                  // SVProgressHUD.showError(withStatus: error.localizedDescription)
@@ -252,161 +176,82 @@ class ViewControllerGroup: UIViewController,UITableViewDelegate,UITableViewDataS
                              }
                                       
                         }
-                                          
-                                          
-                                          
-                                          
-                                                
-                                     
-                                      }
+    }
                                         
         
-        func numberOfSections(in tableView: UITableView) -> Int
+    func numberOfSections(in tableView: UITableView) -> Int
+    {
+        return 1
+        
+    }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
+    {
+        return 255;
+        
+    }
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
+    {
+        return self.emp_array.count
+    }
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
+    {
+        let cell:SessionsTableViewCellFav = self.tblView.dequeueReusableCell(withIdentifier: "SessionsTableViewCellFav") as! SessionsTableViewCellFav
+        cell.selectionStyle = .none
+        let JSON = self.emp_array[indexPath.row] as! NSDictionary
+        let s_title = "\(JSON.value(forKeyPath: "s_title") ?? "")"
+        let s_category_name = "\(JSON.value(forKeyPath: "s_category_name") ?? "")"
+        let s_address = "\(JSON.value(forKeyPath: "s_address") ?? "")"
+        let s_city = "\(JSON.value(forKeyPath: "s_city") ?? "")"
+        let s_region = ""
+        let f_price = "\(JSON.value(forKeyPath: "i_price") ?? "")"
+        var intPrice =  Int(f_price)
+        cell.lblPName.text = "$\(intPrice!/1000000)/Month"
+        cell.txtTitle.text = "\(s_title)"
+        cell.txtAdress.text = "\(s_city) \(s_region)"
+        let fk_i_item_id = "\(JSON.value(forKeyPath: "fk_i_item_id") ?? "")"
+        let  urlString = "\(ConstantsURL.baseURL)&type=read&&object=item&action=resourcesById&itemId=\(fk_i_item_id)"                                                                       // ProgressHUD.show()
+        
+        AF.request(urlString, method: .get, parameters: nil, encoding: URLEncoding.default).responseJSON
+        {response in
+            switch response.result {
+            case .success:                                                                                    print("Res\(response.value!)")
+                let JSON = response.value as! NSDictionary?
+                let status = JSON?.value(forKeyPath: "status") as! String
+                if status == "OK"
                 {
-                    return 1
-                }
-                func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
-                {
-                    return 255;
-                }
-                func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
-                {
-                    
-                    return self.emp_array.count
-                    
-                    
-                }
-                
-                
-                   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
-                   {
-                       
-                       let cell:SessionsTableViewCellFav = self.tblView.dequeueReusableCell(withIdentifier: "SessionsTableViewCellFav") as! SessionsTableViewCellFav
-                       
-                       
-                       cell.selectionStyle = .none
-                    
-                    let JSON = self.emp_array[indexPath.row] as! NSDictionary
-
-                                   
-                                   let s_title = "\(JSON.value(forKeyPath: "s_title") ?? "")"
-                                  let s_category_name = "\(JSON.value(forKeyPath: "s_category_name") ?? "")"
-                                              
-                                let s_address = "\(JSON.value(forKeyPath: "s_address") ?? "")"
-                                              
-                                let s_city = "\(JSON.value(forKeyPath: "s_city") ?? "")"
-                                let s_region = ""
-                     let f_price = "\(JSON.value(forKeyPath: "i_price") ?? "")"
-
-                    var intPrice =  Int(f_price)
-                    
-                                              
-                    cell.lblPName.text = "$\(intPrice!/1000000)/Month"
-                                              cell.txtTitle.text = "\(s_title)"
-                                              cell.txtAdress.text = "\(s_city) \(s_region)"
-                    
-                    
-                    
-                    
-                    
-                    let fk_i_item_id = "\(JSON.value(forKeyPath: "fk_i_item_id") ?? "")"
-                    
-                    
-                    
-                    
-                    
-                                           
-                                                                        
-                                                                        
-                          let  urlString = "\(ConstantsURL.baseURL)&type=read&&object=item&action=resourcesById&itemId=\(fk_i_item_id)"
-                                                                             
-
-                                                                       // ProgressHUD.show()
-                                                                       
-                                                                     
-                                                         
-                                                                          AF.request(urlString, method: .get, parameters: nil, encoding: URLEncoding.default).responseJSON
-                                                                            {response in
-                                                                            
-
-                                                                                switch response.result {
-                                                                                case .success:
-                                                                                    print("Res\(response.value!)")
-                                                                                    
-                                                                                    let JSON = response.value as! NSDictionary?
-                                                                                     
-                                                                                    
-                                                                                     
-                                                                                     let status = JSON?.value(forKeyPath: "status") as! String
-                                                                                     
-                      if status == "OK"
-                     {
+                    let signstatus = (JSON as AnyObject).value(forKeyPath: "response") as! Array<Any>
+                    if signstatus.count == 0{
                         
-                       
-                        
-                        let signstatus = (JSON as AnyObject).value(forKeyPath: "response") as! Array<Any>
-
-                        if signstatus.count == 0
-                        {
-                            
-                        }
-                        else
-                        {
-                        
-                        let dict = signstatus[0] as! NSDictionary
-                        
+                    } else
+                    {
+                        let dict = signstatus.last as! NSDictionary
                         let s_title = "\(dict.value(forKeyPath: "s_path") ?? "")"
                         let pk_i_id = "\(dict.value(forKeyPath: "pk_i_id") ?? "")"
-
-                        
                         let prviewurl = s_title
-                                           let makeUrl = "\(ConstantsURL.imageBaseURL)\(prviewurl)\(pk_i_id)_preview.jpg"
-                                           
-                                           print("make:\(makeUrl)")
-                        
-                                           
-                                           cell.imageObj.sd_setImage(with: URL(string: makeUrl), placeholderImage: UIImage(named: "tempplace.png"))
-
-                                           
-                                           cell.getValue = fk_i_item_id
-                            
-                        }
-                        
+                        let makeUrl = "\(ConstantsURL.imageBaseURL)\(prviewurl)\(pk_i_id)_preview.jpg"
+                        print("makeUrl === \(makeUrl)")
+                        cell.imageObj.sd_setImage(with: URL(string: makeUrl), placeholderImage: UIImage(named: "tempplace.png"))
+                        cell.getValue = fk_i_item_id
                     }
-                    else
-                     {
-                        
-                       
-                     
-                    }
-                                                                                    
-                                                                                   
-                                                                                    
-                                            
-                                            break
-                                        case .failure(let error):
-                                            // SVProgressHUD.showError(withStatus: error.localizedDescription)
-                                         ProgressHUD.dismiss()
-                                            print(error.localizedDescription)
-                                        }
-                                                 
-                                   }
-                                                     
-                                                     
-                                                     
-                                                     
-                                                           
-                                                
-                                                 
                     
+                }
+                else
+                {
                     
-                    
-                    
-                       return cell as SessionsTableViewCellFav
-                   }
-     
+                }
+                break
+            case .failure(let error):
+                // SVProgressHUD.showError(withStatus: error.localizedDescription)
+                ProgressHUD.dismiss()
+                print(error.localizedDescription)
+                
+            }
+            
+        }
+        return cell as SessionsTableViewCellFav
+        
+    }
     
-          
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         let JSON = self.emp_array[indexPath.row] as! NSDictionary
@@ -418,23 +263,15 @@ class ViewControllerGroup: UIViewController,UITableViewDelegate,UITableViewDataS
         
         let myData = NSKeyedArchiver.archivedData(withRootObject: JSON)
         UserDefaults.standard.set(myData, forKey: "ADS_DATA")
-        
-        
-        
-        
-        
-        
          if let viewController = UIStoryboard(name: "\(UserDefaults.standard.string(forKey: "STORY_BOARD")!)", bundle: nil).instantiateViewController(withIdentifier: "ViewControllerAdsDetails") as? ViewControllerAdsDetails
-                                                    {
-                                                        if let navigator = navigationController
-                                                        {
-                                                            navigator.pushViewController(viewController, animated: true)
-                                                        }
-                                                    }
-      
+         {
+            if let navigator = navigationController
+            {
+                navigator.pushViewController(viewController, animated: true)
+            }
+         }
     }
-    
-    
+        
     @objc func cmdClicked(_ button: UIButton?) {
        
        let row = Int(button!.tag % 1000 )
@@ -451,13 +288,9 @@ class ViewControllerGroup: UIViewController,UITableViewDelegate,UITableViewDataS
        }
     
     @objc func delClicked(_ button: UIButton?) {
-        
         let row = Int(button!.tag % 1000 )
         let section = Int(button!.tag / 1000 )
-         
-         
-            
-        }
+    }
     
     
     @IBAction func clickNewTest(_ sender: Any) {
@@ -513,10 +346,6 @@ class ViewControllerGroup: UIViewController,UITableViewDelegate,UITableViewDataS
    
    func didTapSomeButton(_ getController: String?) {
       print("Tabbed:\(getController ?? "")")
-      
-      
-      
-      
           let tabbed = "\(getController ?? "")"
           if tabbed == "1"
           {
