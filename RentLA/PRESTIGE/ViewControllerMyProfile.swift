@@ -57,7 +57,6 @@ class ViewControllerMyProfile: UIViewController,UITableViewDelegate,UITableViewD
             self.clickLoginView.isHidden = true
             self.clickProfileView.isHidden = false
             self.txtlblll.text = "Welcome Back \(UserDefaults.standard.string(forKey: "U_EMAIL")!)"
-            
 
             PoohWisdomProducts.store.requestProducts { [weak self] success, products in
               guard let self = self else { return }
@@ -123,11 +122,6 @@ class ViewControllerMyProfile: UIViewController,UITableViewDelegate,UITableViewD
                 
                   self.purchaseItemIndex(index: 0)
         #endif
-        
-       
-        
-        
-        
     }
     
     private func purchaseItemIndex(index: Int) {
